@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fluxo Digital — Sites que convertem visitantes em clientes</title>
+  <meta name="description" content="Criamos sites de alta performance que transformam visitantes em clientes. Design premium, velocidade e tecnologia para o seu negócio.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="64x64" href="img/logo-favicon.png">
+</head>
+
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="ld-wrap">
+      <div class="ld-logo">
+        <span class="ld-logo-f">F</span>luxo<span class="ld-logo-d">.</span>
+      </div>
+      <div class="ld-bar"><div class="ld-prog"></div></div>
+      <div class="ld-status">Inicializando...</div>
+    </div>
+  </div>
+
+  <!-- CURSOR -->
+  <div id="cursor"></div>
+  <div id="cursor-trail"></div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">
+      Fluxo<span class="logo-dot">.</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#benefits">Serviços</a></li>
+      <li><a href="#projects">Projetos</a></li>
+      <li><a href="#value">Sobre</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li>
+        <a href="https://wa.me/5517981653111?text=Olá!%20Vi%20o%20site%20da%20Fluxo%20Digital%20e%20quero%20saber%20mais."
+          class="nav-cta" target="_blank" rel="noopener">
+          Falar agora
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+        </a>
+      </li>
+    </ul>
+
+    <button class="hbg" id="hbg" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="h-grid"></div>
+      <canvas id="hero-canvas"></canvas>
+      <div class="h-orb h-orb1"></div>
+      <div class="h-orb h-orb2"></div>
+      <div class="h-spotlight" id="spotlight"></div>
+
+      <!-- Floating UI cards -->
+      <div class="ui-card uc1">
+        <div class="uc-bar">
+          <div class="uc-dot r"></div><div class="uc-dot y"></div><div class="uc-dot g"></div>
+          <div class="uc-url"></div>
+        </div>
+        <div class="uc-body">
+          <div class="uc-metric">
+            <span class="uc-metric-val">+247%</span>
+            <span class="uc-metric-lbl">conversão</span>
+          </div>
+          <div class="uc-chart">
+            <div class="uc-bar-item" style="height:30%"></div>
+            <div class="uc-bar-item" style="height:55%"></div>
+            <div class="uc-bar-item" style="height:42%"></div>
+            <div class="uc-bar-item" style="height:78%"></div>
+            <div class="uc-bar-item active" style="height:95%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui-card uc2">
+        <div class="uc-bar">
+          <div class="uc-dot r"></div><div class="uc-dot y"></div><div class="uc-dot g"></div>
+          <div class="uc-url"></div>
+        </div>
+        <div class="uc-body">
+          <div class="uc-status">
+            <div class="uc-status-dot"></div>
+            <span>Site ao vivo</span>
+          </div>
+          <div class="uc-lines">
+            <div class="uc-line" style="width:80%"></div>
+            <div class="uc-line" style="width:55%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui-card uc3">
+        <div class="uc-body" style="padding:14px">
+          <div class="uc-perf">
+            <span class="uc-perf-n">99</span>
+            <span class="uc-perf-lbl">Performance</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating code snippets -->
+      <div class="code-snip" style="left:5%;top:68%;--sx:16px;animation-duration:7s;animation-delay:0s">display: flex;</div>
+      <div class="code-snip" style="right:6%;top:58%;--sx:-14px;animation-duration:8.5s;animation-delay:-3s">border-radius: 16px;</div>
+      <div class="code-snip" style="left:38%;bottom:8%;--sx:10px;animation-duration:9s;animation-delay:-1.5s">font-weight: 800;</div>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <div class="badge-pulse"></div>
+        Especialistas em alta performance digital
+      </div>
+
+      <h1 class="hero-title">
+        Sites que<br>
+        <span class="hero-gradient">transformam</span><br>
+        visitantes em clientes
+      </h1>
+
+      <p class="hero-sub">
+        Unimos design de elite, tecnologia de ponta e estratégia de conversão
+        para construir sua presença digital de alta performance.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="https://wa.me/5517981653111?text=Olá!%20Vi%20o%20site%20da%20Fluxo%20Digital%20e%20quero%20criar%20meu%20site."
+          class="btn-primary" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Começar projeto
+        </a>
+        <a href="#projects" class="btn-secondary">
+          Ver portfólio
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-trust">
+        <div class="trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Entrega em 7 dias
+        </div>
+        <div class="trust-sep"></div>
+        <div class="trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          100% responsivo
+        </div>
+        <div class="trust-sep"></div>
+        <div class="trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Suporte incluso
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-ind">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section id="benefits">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="sec-label">Por que nos escolher</div>
+        <h2 class="sec-title reveal d1">Tecnologia e design<br>a serviço do seu negócio</h2>
+        <p class="sec-desc reveal d2">Cada site que entregamos é construído com obsessão por performance, conversão e experiência do usuário.</p>
+      </div>
+
+      <div class="ben-grid">
+        <div class="ben-card reveal d1">
+          <div class="ben-card-glow"></div>
+          <div class="ben-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+            </svg>
+          </div>
+          <h3 class="ben-title">Design Premium</h3>
+          <p class="ben-desc">Interfaces modernas e sofisticadas que transmitem autoridade e conquistam a confiança do cliente em segundos.</p>
+          <div class="ben-tag">UI/UX</div>
+        </div>
+
+        <div class="ben-card featured reveal d2">
+          <div class="ben-card-glow featured-glow"></div>
+          <div class="ben-badge-featured">Mais popular</div>
+          <div class="ben-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M3 17l6-6 4 4 8-8"/>
+            </svg>
+          </div>
+          <h3 class="ben-title">Foco em Conversão</h3>
+          <p class="ben-desc">Cada elemento estrategicamente posicionado para guiar o visitante até o contato. Arquitetura de persuasão.</p>
+          <div class="ben-tag">Conversão</div>
+        </div>
+
+        <div class="ben-card reveal d3">
+          <div class="ben-card-glow"></div>
+          <div class="ben-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M13 2L3 14h7v8l10-12h-7z"/>
+            </svg>
+          </div>
+          <h3 class="ben-title">Velocidade Máxima</h3>
+          <p class="ben-desc">Sites ultrarrápidos e otimizados para não perder nenhum cliente por lentidão. Performance de nível técnico.</p>
+          <div class="ben-tag">Performance</div>
+        </div>
+
+        <div class="ben-card reveal d4">
+          <div class="ben-card-glow"></div>
+          <div class="ben-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="ben-title">Suporte Dedicado</h3>
+          <p class="ben-desc">Parceria contínua com atendimento próximo em todas as fases do projeto e pós-entrega.</p>
+          <div class="ben-tag">Suporte</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="sec-label">Portfólio</div>
+        <h2 class="sec-title reveal d1">Resultados reais,<br>projetos reais</h2>
+        <p class="sec-desc reveal d2">Sites entregues para negócios que agora dominam sua presença digital.</p>
+      </div>
+
+      <div class="proj-grid">
+        <div class="proj-card reveal d1">
+          <div class="proj-img">
+            <img src="img/barbearia.png" alt="Barbearia" loading="lazy"
+              onerror="this.parentElement.innerHTML='<div class=\'proj-ph\'><div class=\'proj-ph-ico\'>✂</div><div class=\'proj-ph-lbl\'>Barbearia</div></div>'">
+            <div class="proj-ov">
+              <a href="https://eduardo-ciudad.github.io/barbearia-site/" target="_blank" rel="noopener" class="proj-ov-btn">
+                Ver site
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <span class="proj-tag">Barbearia</span>
+            <h3 class="proj-name">Site para Barbearia</h3>
+            <p class="proj-desc">Design masculino e sofisticado com apresentação de serviços, galeria e CTA de agendamento.</p>
+            <a href="https://eduardo-ciudad.github.io/barbearia-site/" class="proj-link" target="_blank" rel="noopener">
+              Ver projeto
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="proj-card reveal d2">
+          <div class="proj-img">
+            <img src="img/leticia-souza.png" alt="Cantora" loading="lazy"
+              onerror="this.parentElement.innerHTML='<div class=\'proj-ph\'><div class=\'proj-ph-ico\'>🎤</div><div class=\'proj-ph-lbl\'>Cantora</div></div>'">
+            <div class="proj-ov">
+              <a href="https://eduardo-ciudad.github.io/leticia-souza-cantora/" target="_blank" rel="noopener" class="proj-ov-btn">
+                Ver site
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <span class="proj-tag">Artista</span>
+            <h3 class="proj-name">Letícia Souza — Cantora</h3>
+            <p class="proj-desc">Portfólio artístico elegante com galeria, agenda de shows e contato para contratações.</p>
+            <a href="https://eduardo-ciudad.github.io/leticia-souza-cantora/" class="proj-link" target="_blank" rel="noopener">
+              Ver projeto
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="proj-card reveal d3">
+          <div class="proj-img">
+            <img src="img/naturaly.png" alt="Produtos Naturais" loading="lazy"
+              onerror="this.parentElement.innerHTML='<div class=\'proj-ph\'><div class=\'proj-ph-ico\'>🌿</div><div class=\'proj-ph-lbl\'>Naturais</div></div>'">
+            <div class="proj-ov">
+              <a href="https://eduardo-ciudad.github.io/sabor-naturaly/" target="_blank" rel="noopener" class="proj-ov-btn">
+                Ver site
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <span class="proj-tag">Alimentação</span>
+            <h3 class="proj-name">Sabor Naturaly</h3>
+            <p class="proj-desc">Site focado em produtos naturais com catálogo visual e pedidos rápidos via WhatsApp.</p>
+            <a href="https://eduardo-ciudad.github.io/sabor-naturaly/" class="proj-link" target="_blank" rel="noopener">
+              Ver projeto
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="proj-card reveal d4">
+          <div class="proj-img">
+            <img src="img/frutaria-2.0.png" alt="Frutaria" loading="lazy"
+              onerror="this.parentElement.innerHTML='<div class=\'proj-ph\'><div class=\'proj-ph-ico\'>🍊</div><div class=\'proj-ph-lbl\'>Frutaria</div></div>'">
+            <div class="proj-ov">
+              <a href="https://eduardo-ciudad.github.io/frutaria-emporio-norte/" target="_blank" rel="noopener" class="proj-ov-btn">
+                Ver site
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <span class="proj-tag">Varejo</span>
+            <h3 class="proj-name">Empório Norte Frutaria</h3>
+            <p class="proj-desc">Site vibrante com cardápio de produtos frescos, promoções e acesso via WhatsApp.</p>
+            <a href="https://eduardo-ciudad.github.io/frutaria-emporio-norte/" class="proj-link" target="_blank" rel="noopener">
+              Ver projeto
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="proj-card reveal d5">
+          <div class="proj-img">
+            <img src="img/portifolio.png" alt="Portfólio Dev" loading="lazy"
+              onerror="this.parentElement.innerHTML='<div class=\'proj-ph\'><div class=\'proj-ph-ico\'>💻</div><div class=\'proj-ph-lbl\'>Portfolio</div></div>'">
+            <div class="proj-ov">
+              <a href="https://eduardo-ciudad.github.io/emporio-laertes/" target="_blank" rel="noopener" class="proj-ov-btn">
+                Ver site
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <span class="proj-tag">Portfolio</span>
+            <h3 class="proj-name">Dev Backend</h3>
+            <p class="proj-desc">Portfólio de desenvolvedor Backend com projetos em destaque e contato para contratações.</p>
+            <a href="https://eduardo-ciudad.github.io/emporio-laertes/" class="proj-link" target="_blank" rel="noopener">
+              Ver projeto
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="proj-card reveal d6">
+          <div class="proj-img">
+            <img src="img/personal.png" alt="Personal Trainer" loading="lazy"
+              onerror="this.parentElement.innerHTML='<div class=\'proj-ph\'><div class=\'proj-ph-ico\'>💪</div><div class=\'proj-ph-lbl\'>Fitness</div></div>'">
+            <div class="proj-ov">
+              <a href="https://eduardo-ciudad.github.io/personal-trainer-perfil/" target="_blank" rel="noopener" class="proj-ov-btn">
+                Ver site
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <span class="proj-tag">Fitness</span>
+            <h3 class="proj-name">Personal Trainer</h3>
+            <p class="proj-desc">Perfil profissional impactante com serviços, metodologia e contato rápido para conversão.</p>
+            <a href="https://eduardo-ciudad.github.io/personal-trainer-perfil/" class="proj-link" target="_blank" rel="noopener">
+              Ver projeto
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE -->
+  <section id="value">
+    <div class="container">
+      <div class="val-inner">
+        <div class="val-left">
+          <div class="sec-label reveal">Por que isso importa</div>
+          <h2 class="sec-title reveal d1">
+            Mais clientes,<br>
+            <span class="gradient-text">mais vendas</span>,<br>
+            mais autoridade
+          </h2>
+          <p class="sec-desc reveal d2">
+            Um site de alta performance é o seu vendedor 24/7. Seu concorrente já está online — e você está ficando para trás.
+          </p>
+
+          <div class="val-stats reveal d3">
+            <div class="stat-card">
+              <div class="stat-n" data-target="97" data-suffix="%">97%</div>
+              <div class="stat-l">dos consumidores pesquisam online antes de comprar</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-n" data-target="3" data-suffix="s">3s</div>
+              <div class="stat-l">para causar a primeira impressão no visitante</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-n" data-target="75" data-suffix="%">75%</div>
+              <div class="stat-l">julgam credibilidade pelo design do site</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-n" data-target="50" data-suffix="%+">50%+</div>
+              <div class="stat-l">aumento médio em contatos após presença digital</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feat-list reveal d2">
+          <div class="feat-item">
+            <div class="feat-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+            </div>
+            <div>
+              <h4>100% Responsivo</h4>
+              <p>Funciona perfeitamente em celular, tablet e computador.</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </div>
+            <div>
+              <h4>Otimizado para Google</h4>
+              <p>SEO técnico incluído para seu negócio ranquear nas buscas.</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h7v8l10-12h-7z"/></svg>
+            </div>
+            <div>
+              <h4>Carregamento Rápido</h4>
+              <p>Sites ultraotimizados — zero cliente perdido por lentidão.</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <div>
+              <h4>Integração WhatsApp</h4>
+              <p>CTA direto para contato — visitante vira cliente na hora.</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <div>
+              <h4>Entrega em 7 Dias</h4>
+              <p>Processo ágil e direto — do briefing ao site no ar rapidamente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="sec-label">Como funciona</div>
+        <h2 class="sec-title reveal d1">Do briefing ao site<br>em 4 etapas</h2>
+        <p class="sec-desc reveal d2">Um processo simples, transparente e eficiente para entregar seu site no prazo.</p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-step reveal d1">
+          <div class="step-num">01</div>
+          <div class="step-connector"></div>
+          <h3 class="step-title">Briefing</h3>
+          <p class="step-desc">Entendemos seu negócio, público-alvo e objetivos para criar a estratégia certa.</p>
+        </div>
+        <div class="process-step reveal d2">
+          <div class="step-num">02</div>
+          <div class="step-connector"></div>
+          <h3 class="step-title">Design</h3>
+          <p class="step-desc">Criamos o layout premium com foco em conversão e identidade visual do seu negócio.</p>
+        </div>
+        <div class="process-step reveal d3">
+          <div class="step-num">03</div>
+          <div class="step-connector"></div>
+          <h3 class="step-title">Desenvolvimento</h3>
+          <p class="step-desc">Codificamos com as melhores tecnologias para garantir performance e responsividade.</p>
+        </div>
+        <div class="process-step reveal d4">
+          <div class="step-num">04</div>
+          <h3 class="step-title">Lançamento</h3>
+          <p class="step-desc">Publicamos, testamos e entregamos o site pronto para gerar resultados imediatos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="sec-label">Perguntas Frequentes</div>
+        <h2 class="sec-title reveal d1">Tudo que você<br>precisa saber</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item reveal d1">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Quanto tempo leva para entregar meu site?</span>
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+          </button>
+          <div class="faq-a">
+            <p>Entregamos sites completos em média em 5 a 7 dias úteis após a aprovação do briefing. Projetos mais complexos podem levar até 14 dias.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal d2">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Preciso ter domínio e hospedagem?</span>
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+          </button>
+          <div class="faq-a">
+            <p>Cuidamos de tudo. Ajudamos na aquisição do domínio, configuramos a hospedagem e publicamos o site. Você só precisa focar no seu negócio.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal d3">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>O site vai aparecer no Google?</span>
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+          </button>
+          <div class="faq-a">
+            <p>Sim. Todo site entregue inclui otimizações básicas de SEO — meta tags, estrutura semântica, velocidade e indexação no Google Search Console.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal d4">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Consigo editar o site depois?</span>
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+          </button>
+          <div class="faq-a">
+            <p>Dependendo do projeto, integramos um CMS simples para que você mesmo possa atualizar textos e imagens. Também oferecemos planos de manutenção mensal.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal d5">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Como é feito o pagamento?</span>
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+          </button>
+          <div class="faq-a">
+            <p>50% na aprovação do projeto e 50% na entrega final. Aceitamos PIX, transferência ou cartão. Sem taxas ocultas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta">
+    <div class="cta-bg-orb cta-orb1"></div>
+    <div class="cta-bg-orb cta-orb2"></div>
+    <div class="cta-grid"></div>
+
+    <div class="container">
+      <div class="cta-inner">
+        <div class="cta-tag reveal">
+          <div class="cta-tag-dot"></div>
+          Vagas limitadas este mês
+        </div>
+
+        <h2 class="cta-title reveal d1">
+          Pronto para ter um site<br>que realmente gera clientes?
+        </h2>
+
+        <p class="cta-desc reveal d2">
+          Fale com nosso especialista agora. Receba uma proposta personalizada para o seu negócio — sem enrolação.
+        </p>
+
+        <div class="reveal d3">
+          <a href="https://wa.me/5517981653111?text=Olá!%20Vi%20o%20site%20da%20Fluxo%20Digital%20e%20quero%20criar%20meu%20site%20profissional."
+            class="btn-cta" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Falar com especialista
+          </a>
+        </div>
+
+        <p class="cta-note reveal d4">Resposta em até 2 horas · Sem compromisso</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="foot-top">
+      <div class="container">
+        <div class="foot-grid">
+          <div class="foot-brand">
+            <a href="#" class="foot-logo">Fluxo<span>.</span></a>
+            <p class="foot-tagline">Sites que transformam visitantes em clientes.</p>
+          </div>
+          <div class="foot-col">
+            <h5>Links</h5>
+            <a href="#benefits">Serviços</a>
+            <a href="#projects">Projetos</a>
+            <a href="#value">Sobre</a>
+            <a href="#faq">FAQ</a>
+          </div>
+          <div class="foot-col">
+            <h5>Contato</h5>
+            <a href="https://wa.me/5517981653111" target="_blank" rel="noopener">(17) 98165-3111</a>
+            <a href="https://instagram.com/fluxodigital" target="_blank" rel="noopener">@fluxodigital</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="container">
+        <div class="foot-copy">© 2025 Fluxo Digital. Todos os direitos reservados.</div>
+        <div class="foot-made">Feito com <span>♥</span> no Brasil</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
