@@ -88,10 +88,18 @@ body::before {
   align-items: center;
   justify-content: center;
   z-index: 10000;
-  transition: opacity .8s var(--ease), visibility .8s ease;
+  transition: opacity .9s var(--ease),
+              filter  .9s var(--ease),
+              transform .9s var(--ease),
+              visibility .9s ease;
 }
 
-#loader.out { opacity: 0; visibility: hidden; }
+#loader.out {
+  opacity: 0;
+  visibility: hidden;
+  filter: blur(14px);
+  transform: scale(1.06);
+}
 
 .ld-wrap {
   display: flex;
@@ -258,6 +266,20 @@ nav.scrolled {
   position: relative;
   overflow: hidden;
   padding: 130px 48px 110px;
+  /* Cinematic entry initial state */
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(18px) scale(.998);
+  transition: opacity 1.15s var(--ease) .06s,
+              filter  1.15s var(--ease) .06s,
+              transform 1.15s var(--ease) .06s;
+  will-change: opacity, filter, transform;
+}
+
+#hero.hero-in {
+  opacity: 1;
+  filter: blur(0px);
+  transform: none;
 }
 
 .hero-bg {
@@ -638,6 +660,25 @@ nav.scrolled {
   width: 1px;
   height: 14px;
   background: var(--border);
+}
+
+/* ── HERO INNER: pause animations until hero section reveals ── */
+.hero-badge,
+.hero-title,
+.hero-sub,
+.hero-ctas,
+.hero-trust,
+.scroll-ind {
+  animation-play-state: paused;
+}
+
+#hero.hero-in .hero-badge,
+#hero.hero-in .hero-title,
+#hero.hero-in .hero-sub,
+#hero.hero-in .hero-ctas,
+#hero.hero-in .hero-trust,
+#hero.hero-in .scroll-ind {
+  animation-play-state: running;
 }
 
 /* ── BOTÕES ── */

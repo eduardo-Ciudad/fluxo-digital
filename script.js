@@ -2,11 +2,12 @@
    FLUXO DIGITAL — script.js
    ============================================= */
 
-/* ── LOADER ── */
+/* ── LOADER + CINEMATIC HERO ENTRY ── */
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
+  const hero   = document.getElementById('hero');
   const status = loader.querySelector('.ld-status');
-  const msgs = ['Inicializando...', 'Carregando assets...', 'Quase pronto...'];
+  const msgs   = ['Inicializando...', 'Carregando assets...', 'Quase pronto...'];
   let i = 0;
 
   const interval = setInterval(() => {
@@ -16,7 +17,22 @@ window.addEventListener('load', () => {
 
   setTimeout(() => {
     clearInterval(interval);
+
+    // Loader dissolves: fade + blur + scale up
     loader.classList.add('out');
+
+    // Hero comes into focus in sync with loader exit (same frame)
+    requestAnimationFrame(() => {
+      hero.classList.add('hero-in');
+    });
+
+    // Release compositor layer once transition is complete
+    hero.addEventListener('transitionend', (e) => {
+      if (e.propertyName === 'opacity') {
+        hero.style.willChange = 'auto';
+      }
+    }, { once: true });
+
   }, 1400);
 });
 
