@@ -149,11 +149,17 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
   const hero = document.getElementById('hero');
 
   function resize() {
-    canvas.width  = hero.offsetWidth;
-    canvas.height = hero.offsetHeight;
+    // Use the hero's client dimensions — never exceed viewport
+    canvas.width  = Math.min(hero.clientWidth,  window.innerWidth);
+    canvas.height = hero.clientHeight;
   }
   resize();
-  window.addEventListener('resize', resize);
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(resize, 100);
+  });
 
   const COUNT = 28;
   const nodes = Array.from({ length: COUNT }, () => ({
@@ -270,7 +276,8 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
   for (let i = 0; i < count; i++) {
     const p   = document.createElement('div');
     const sz  = Math.random() * 2.5 + .8;
-    const dx  = (Math.random() - .5) * 100;
+    // Constrain horizontal drift so particles don't go offscreen
+    const dx  = (Math.random() - .5) * Math.min(100, window.innerWidth * 0.15);
     const dur = (Math.random() * 12 + 9).toFixed(1);
     const del = (Math.random() * 10).toFixed(1);
 
