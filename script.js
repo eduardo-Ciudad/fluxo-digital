@@ -36,9 +36,17 @@ window.addEventListener('load', () => {
   }, 1400);
 });
 
-/* ── CUSTOM CURSOR ── */
+/* ── CUSTOM CURSOR (desktop only) ── */
 (function initCursor() {
-  if (window.innerWidth < 768) return;
+  const isMobile = window.innerWidth < 768 || ('ontouchstart' in window);
+  if (isMobile) {
+    // Hide cursor elements so they don't occupy space
+    const c = document.getElementById('cursor');
+    const t = document.getElementById('cursor-trail');
+    if (c) c.style.display = 'none';
+    if (t) t.style.display = 'none';
+    return;
+  }
 
   const cursor = document.getElementById('cursor');
   const trail  = document.getElementById('cursor-trail');
@@ -87,15 +95,29 @@ window.addEventListener('scroll', () => {
 
 /* ── NAV MOBILE ── */
 function toggleNav() {
-  document.getElementById('navLinks').classList.toggle('open');
-  document.getElementById('hbg').classList.toggle('active');
+  const links = document.getElementById('navLinks');
+  const hbg   = document.getElementById('hbg');
+  const isOpen = links.classList.toggle('open');
+  hbg.classList.toggle('active');
+  // Lock body scroll while menu is open
+  document.body.style.overflow = isOpen ? 'hidden' : '';
 }
 
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
     document.getElementById('navLinks').classList.remove('open');
     document.getElementById('hbg').classList.remove('active');
+    document.body.style.overflow = '';
   });
+});
+
+// Close mobile menu on Escape key
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.getElementById('navLinks').classList.remove('open');
+    document.getElementById('hbg').classList.remove('active');
+    document.body.style.overflow = '';
+  }
 });
 
 /* ── SMOOTH SCROLL ── */
@@ -243,7 +265,9 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
   `;
   document.head.appendChild(style);
 
-  for (let i = 0; i < 18; i++) {
+  // Reduce particle count on mobile for performance
+  const count = window.innerWidth < 768 ? 8 : 18;
+  for (let i = 0; i < count; i++) {
     const p   = document.createElement('div');
     const sz  = Math.random() * 2.5 + .8;
     const dx  = (Math.random() - .5) * 100;
@@ -293,19 +317,21 @@ const statsObserver = new IntersectionObserver((entries) => {
 const valueSection = document.getElementById('value');
 if (valueSection) statsObserver.observe(valueSection);
 
-/* ── PROJECT CARD TILT ── */
-document.querySelectorAll('.proj-card').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const rect = card.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width  - .5;
-    const y = (e.clientY - rect.top)  / rect.height - .5;
-    card.style.transform   = `translateY(-8px) scale(1.01) rotateX(${y * -4}deg) rotateY(${x * 4}deg)`;
-    card.style.perspective = '900px';
+/* ── PROJECT CARD TILT (desktop only) ── */
+if (window.innerWidth >= 768 && !('ontouchstart' in window)) {
+  document.querySelectorAll('.proj-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width  - .5;
+      const y = (e.clientY - rect.top)  / rect.height - .5;
+      card.style.transform   = `translateY(-8px) scale(1.01) rotateX(${y * -4}deg) rotateY(${x * 4}deg)`;
+      card.style.perspective = '900px';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
   });
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = '';
-  });
-});
+}
 
 /* ── FAQ ACCORDION ── */
 function toggleFaq(btn) {
@@ -324,8 +350,8 @@ function toggleFaq(btn) {
   }
 }
 
-/* ── BENEFIT CARDS GLOW ON MOUSE ── */
-document.querySelectorAll('.ben-card').forEach(card => {
+/* ── BENEFIT CARDS GLOW ON MOUSE (desktop only) ── */
+if (!('ontouchstart' in window)) document.querySelectorAll('.ben-card').forEach(card => {
   card.addEventListener('mousemove', e => {
     const rect = card.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width)  * 100;
